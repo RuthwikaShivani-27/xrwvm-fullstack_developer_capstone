@@ -59,16 +59,42 @@ app.get('/fetchReviews/dealer/:id', async (req, res) => {
 // Express route to fetch all dealerships
 app.get('/fetchDealers', async (req, res) => {
 //Write your code here
+try {
+    // Implement logic to fetch all dealers from the database
+    // Send the fetched dealers as response
+    res.status(200).json({ message: 'All dealers fetched successfully', dealers: [] });
+} catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+}
 });
 
 // Express route to fetch Dealers by a particular state
 app.get('/fetchDealers/:state', async (req, res) => {
 //Write your code here
+try {
+    const { state } = req.params;
+    // Implement logic to fetch dealers by state from the database
+    // Send the fetched dealers as response
+    res.status(200).json({ message: `Dealers in ${state} fetched successfully`, dealers: [] });
+} catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+}
 });
 
 // Express route to fetch dealer by a particular id
 app.get('/fetchDealer/:id', async (req, res) => {
 //Write your code here
+try {
+    const { id } = req.params;
+    // Implement logic to fetch dealer by ID from the database
+    // Send the fetched dealer as response
+    res.status(200).json({ message: `Dealer with ID ${id} fetched successfully`, dealer: {} });
+} catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+}
 });
 
 //Express route to insert review
